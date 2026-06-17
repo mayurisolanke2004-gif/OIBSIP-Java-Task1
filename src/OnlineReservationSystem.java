@@ -5,11 +5,11 @@ import java.util.Scanner;
 
 public class OnlineReservationSystem {
     
-    // Train data store karnyasathi
+    
     static Map<String, String> trains = new HashMap<>();
-    // Booked tickets: PNR -> details
+   
     static Map<String, String> bookings = new HashMap<>();
-    // Login details
+    
     static final String USERNAME = "mayuri";
     static final String PASSWORD = "1234";
     
@@ -17,7 +17,7 @@ public class OnlineReservationSystem {
     static Random rand = new Random();
     
     public static void main(String[] args) {
-        // Sample trains add karu
+       
         trains.put("12121", "Pune - Mumbai Express");
         trains.put("12122", "Nagpur - Pune SF");
         trains.put("11007", "Mumbai - Solapur Exp");
@@ -29,7 +29,7 @@ public class OnlineReservationSystem {
             do {
                 showMenu();
                 choice = sc.nextInt();
-                sc.nextLine(); // buffer clear
+                sc.nextLine(); 
                 
                 switch(choice) {
                     case 1:
@@ -54,7 +54,7 @@ public class OnlineReservationSystem {
         sc.close();
     }
     
-    // Login function
+   
     static boolean login() {
         System.out.print("Enter Username: ");
         String user = sc.nextLine();
@@ -68,7 +68,7 @@ public class OnlineReservationSystem {
         return false;
     }
     
-    // Menu dakhavne
+   
     static void showMenu() {
         System.out.println("\n--- Menu ---");
         System.out.println("1. Book Ticket");
@@ -78,7 +78,7 @@ public class OnlineReservationSystem {
         System.out.print("Enter your choice: ");
     }
     
-    // Ticket book karne
+    
     static void bookTicket() {
         System.out.println("\n--- Available Trains ---");
         for(Map.Entry<String, String> entry : trains.entrySet()) {
@@ -102,7 +102,7 @@ public class OnlineReservationSystem {
         System.out.print("Enter Date of Journey DD-MM-YYYY: ");
         String date = sc.nextLine();
         
-        // PNR generate karne
+      
         int pnr = 100000 + rand.nextInt(900000);
         String pnrStr = String.valueOf(pnr);
         
@@ -116,7 +116,7 @@ public class OnlineReservationSystem {
         System.out.println("Please save this PNR for future reference.");
     }
     
-    // Ticket cancel karne
+   
     static void cancelTicket() {
         System.out.print("\nEnter PNR to Cancel: ");
         String pnr = sc.nextLine();
@@ -137,7 +137,7 @@ public class OnlineReservationSystem {
         }
     }
     
-    // Saglya bookings baghne
+    
     static void viewBookings() {
         if(bookings.isEmpty()) {
             System.out.println("\nNo bookings found.");
