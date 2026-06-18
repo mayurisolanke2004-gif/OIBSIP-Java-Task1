@@ -101,7 +101,7 @@ public class OnlineReservationSystem {
         String to = sc.nextLine();
         System.out.print("Enter Date of Journey DD-MM-YYYY: ");
         String date = sc.nextLine();
-        
+       
       
         int pnr = 100000 + rand.nextInt(900000);
         String pnrStr = String.valueOf(pnr);
